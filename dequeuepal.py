@@ -1,0 +1,29 @@
+from collections import deque
+
+
+def is_palindrome(string):
+    queue = deque()
+
+    
+    for char in string:
+        if char.isalnum():
+            queue.append(char.lower())
+    
+
+    while len(queue) > 1:
+        first = queue.popleft()
+        last = queue.pop()
+
+       
+        if first != last:
+            return False
+
+    return True
+
+
+string = input("Enter a string: ")
+
+if is_palindrome(string):
+    print("The given string is a Palindrome")
+else:
+    print("The given string is not a Palindrome")
