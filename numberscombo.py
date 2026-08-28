@@ -1,0 +1,11 @@
+
+from itertools import combinations
+
+lst = [1, -2, 3, 4]
+
+print("Positive combinations:")
+
+for r in range(1, len(lst) + 1):
+    for c in combinations(lst, r):
+        if sum(c) > 0:
+            print(c)
